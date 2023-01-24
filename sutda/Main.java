@@ -95,6 +95,10 @@ public class Main {
         loading();
 
         System.out.println("[ System ] 결과를 공개합니다.");
+
+        Rank rank = new Rank(player.firstCard, player.secondCard);
+
+        System.out.println(rank.rankName);
     }
 
     static void start() {
