@@ -1,0 +1,5 @@
+package sutda;
+
+class Rank {
+
+}
