@@ -91,14 +91,20 @@ public class Main {
 
         loading();
 
+        Rank rankP = new Rank(player.firstCard, player.secondCard);
+        Rank rankO = new Rank(opponent.firstCard, opponent.secondCard);
+
+        int rankOfPlayer = rankP.setRank(player.firstCard, player.secondCard);
+        int rankOfOpponent = rankO.setRank(opponent.firstCard, opponent.secondCard);
+
+        System.out.println("[ System ] 현재 " + player.name + "님의 족보는 " + rankP.rankName + "입니다.");
+
         gg();
         loading();
 
         System.out.println("[ System ] 결과를 공개합니다.");
 
-        Rank rank = new Rank(player.firstCard, player.secondCard);
 
-        System.out.println(rank.rankName);
     }
 
     static void start() {
