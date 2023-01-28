@@ -5,8 +5,7 @@ class Rank {
     Card secondCard;
     String rankName;
 
-    Rank() {
-    }
+    Rank() {}
 
     Rank(Card firstCard, Card secondCard) {
         this.firstCard = firstCard;
@@ -19,7 +18,6 @@ class Rank {
                 if (firstCard.num == 3 || secondCard.num == 3) {
                     this.rankName = "13광땡";
                     return 95;
-
                 } else if (firstCard.num == 8 || secondCard.num == 8) {
                     this.rankName = "18광땡";
                     return 95;
@@ -53,6 +51,14 @@ class Rank {
             } else if (firstCard.num == 10 || secondCard.num == 10) {
                 this.rankName = "장삥";
                 return 74;
+            } else {
+                if ((firstCard.num + secondCard.num) % 10 == 0) {
+                    this.rankName = "망통";
+                    return 50;
+                } else {
+                    this.rankName = (firstCard.num + secondCard.num) % 10 + "끗";
+                    return (firstCard.num + secondCard.num) % 10 + 60;
+                }
             }
         }
 
@@ -65,19 +71,39 @@ class Rank {
                 return 70;
             } else if (firstCard.num == 9 || secondCard.num == 9) {
                 this.rankName = "구사";
-                /* */
+                return -10;
+            } else {
+                if ((firstCard.num + secondCard.num) % 10 == 0) {
+                    this.rankName = "망통";
+                    return 50;
+                } else {
+                    this.rankName = (firstCard.num + secondCard.num) % 10 + "끗";
+                    return (firstCard.num + secondCard.num) % 10 + 60;
+                }
             }
         }
 
         if (firstCard.num == 7 || secondCard.num == 7) {
             if (firstCard.num == 3 || secondCard.num == 3) {
                 this.rankName = "땡잡이";
-                /* */
+                return -30;
             } else if (firstCard.num == 4 || secondCard.num == 4) {
                 this.rankName = "암행어사";
-                /* */
+                return -20;
+            } else {
+                if ((firstCard.num + secondCard.num) % 10 == 0) {
+                    this.rankName = "망통";
+                    return 50;
+                } else {
+                    this.rankName = (firstCard.num + secondCard.num) % 10 + "끗";
+                    return (firstCard.num + secondCard.num) % 10 + 60;
+                }
             }
-        } else {
+        }
+
+        if (firstCard.num == 2 || secondCard.num == 2 || firstCard.num == 3 || secondCard.num == 3
+                || firstCard.num == 5 || secondCard.num == 5 || firstCard.num == 6 || secondCard.num == 6
+                || firstCard.num == 8 || secondCard.num == 8 || firstCard.num == 9 || secondCard.num == 9) {
             if ((firstCard.num + secondCard.num) % 10 == 0) {
                 this.rankName = "망통";
                 return 50;
@@ -86,5 +112,7 @@ class Rank {
                 return (firstCard.num + secondCard.num) % 10 + 60;
             }
         }
+
+        return 0;
     }
 }

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         Scanner scanner = new Scanner(System.in);
 
         start();
@@ -92,6 +93,7 @@ public class Main {
         loading();
 
         Rank rankP = new Rank(player.firstCard, player.secondCard);
+
         Rank rankO = new Rank(opponent.firstCard, opponent.secondCard);
 
         int rankOfPlayer = rankP.setRank(player.firstCard, player.secondCard);
@@ -103,6 +105,15 @@ public class Main {
         loading();
 
         System.out.println("[ System ] 결과를 공개합니다.");
+        */
+
+
+        // 랭크네임 테스트
+        Card firstCard = new Card(1, true);
+        Card secondCard = new Card(1, false);
+        Rank rank = new Rank(firstCard, secondCard);
+        rank.setRank(firstCard, secondCard);
+        System.out.println(rank.rankName);
 
 
     }
