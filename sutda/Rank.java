@@ -101,18 +101,12 @@ class Rank {
             }
         }
 
-        if (firstCard.num == 2 || secondCard.num == 2 || firstCard.num == 3 || secondCard.num == 3
-                || firstCard.num == 5 || secondCard.num == 5 || firstCard.num == 6 || secondCard.num == 6
-                || firstCard.num == 8 || secondCard.num == 8 || firstCard.num == 9 || secondCard.num == 9) {
-            if ((firstCard.num + secondCard.num) % 10 == 0) {
-                this.rankName = "망통";
-                return 50;
-            } else {
-                this.rankName = (firstCard.num + secondCard.num) % 10 + "끗";
-                return (firstCard.num + secondCard.num) % 10 + 60;
-            }
+        if ((firstCard.num + secondCard.num) % 10 == 0) {
+            this.rankName = "망통";
+            return 50;
+        } else {
+            this.rankName = (firstCard.num + secondCard.num) % 10 + "끗";
+            return (firstCard.num + secondCard.num) % 10 + 60;
         }
-
-        return 0;
     }
 }

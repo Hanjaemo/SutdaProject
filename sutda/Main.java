@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /*
         Scanner scanner = new Scanner(System.in);
 
         start();
@@ -69,6 +68,8 @@ public class Main {
 
         opponent.secondCard = deck.pick();
         System.out.println(opponent.name + "님이 두번째 카드를 뽑았습니다.");
+
+        /*
         System.out.println("--------------------");
 
         System.out.println("[ System ] 어떤 카드를 공개하시겠습니까?");
@@ -83,6 +84,7 @@ public class Main {
         }
 
         System.out.println("-----------------");
+         */
 
         if ((int)(Math.random()*10 - 8) == 1) {
             System.out.println(opponent.name + "님이 카드를 공개합니다. -> " + opponent.firstCard);
@@ -90,32 +92,38 @@ public class Main {
             System.out.println(opponent.name + "님이 카드를 공개합니다. -> " + opponent.secondCard);
         }
 
+        System.out.println("-----------------");
+
+        gg();
         loading();
 
         Rank rankP = new Rank(player.firstCard, player.secondCard);
-
         Rank rankO = new Rank(opponent.firstCard, opponent.secondCard);
 
         int rankOfPlayer = rankP.setRank(player.firstCard, player.secondCard);
         int rankOfOpponent = rankO.setRank(opponent.firstCard, opponent.secondCard);
 
-        System.out.println("[ System ] 현재 " + player.name + "님의 족보는 " + rankP.rankName + "입니다.");
+        System.out.println("[ System ] 현재 " + player.name + "님의 족보는 ⎡" + rankP.rankName + "⎦입니다.");
 
         gg();
         loading();
 
         System.out.println("[ System ] 결과를 공개합니다.");
-        */
 
+        System.out.println("[ System ] " + player.name + "님의 족보: " + rankP.rankName);
+        System.out.println("[ System ] " + opponent.name + "님의 족보: " + rankO.rankName);
 
-        // 랭크네임 테스트
-        Card firstCard = new Card(1, true);
-        Card secondCard = new Card(1, false);
+        System.out.println("-----------------");
+
+        /* value 비교해서 승패 가리기 */
+
+        /* 랭크네임 테스트
+        Card firstCard = new Card(2, false);
+        Card secondCard = new Card(8, true);
         Rank rank = new Rank(firstCard, secondCard);
         rank.setRank(firstCard, secondCard);
         System.out.println(rank.rankName);
-
-
+        */
     }
 
     static void start() {
